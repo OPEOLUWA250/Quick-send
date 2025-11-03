@@ -120,6 +120,20 @@ const createUsernames = function (accs) {
 
 createUsernames(accounts);
 
+// Event Handler
+let currentAccount;
+
+btnLogin.addEventListener('click', function (e) {
+  // Prevent Form from submitting
+  e.preventDefault();
+  console.log('LOGIN');
+
+  currentAccount = accounts.find(
+    acc => acc.username === inputLoginUsername.value
+  );
+  console.log(currentAccount);
+});
+
 // console.log(accounts);
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -178,5 +192,5 @@ console.log(movements);
 // }, 0);
 // console.log(balance);
 
-const balance = movements.reduce((acc, curr) => acc + curr, 0);
-console.log(balance);
+// const balance = movements.reduce((acc, curr) => acc + curr, 0);
+// console.log(balance);
